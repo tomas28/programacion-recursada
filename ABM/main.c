@@ -1,55 +1,66 @@
-
+#include <stdio.h>
 #include <stdlib.h>
-#include "Empleado.h"
-
-#define T 10
-
-
-int menuDeOpciones(char[]);
-
+#include "empleados.h"
+#define TAM 1000
 
 int main()
 {
+    char seguir;
+    employee empleado[TAM];
 
-    int indice;
-    int opcion;
-
-    eEmpleado lista[T];
-    inicializarEmpleados(lista,T);
+    inicializarEmpleados(empleado,TAM);
 
 
-hardcodearDatosEmpleados(lista,4);
-    do
-    {
-        opcion = menuDeOpciones("1.Alta\n2.Baja\n3.Modificar\n4.Mostrar\n5.Salir\nElija una opcion: ");
-        switch(opcion)
-        {
-            case 1:
-                cargarEmpleado(lista,  T);
+    while(seguir != 's'){
+        printf("\n 1-Alta empleado\n 2-Baja empleado\n 3-Modificacion empleado\n 4-Ordenar empleados\n 5-Salir \n\n");
+        fflush(stdin);
+        scanf("%c",&seguir);
 
-            break;
-            case 4:
-                mostrarListaEmpleados(lista, T);
+
+
+        switch(seguir)
+            {
+
+            case '1':
+                printf("\nAlta empleado\n\n");
+                altaEmpleado(empleado,TAM);
+
+
+                system("pause");
                 break;
 
+            case '2':
+                printf("\nBaja empleado\n\n");
+                system("pause");
+                break;
+
+            case '3':
+                printf("\nModificacion empleado\n\n");
+                system("pause");
+                break;
+
+            case '4':
+                printf("\nOrdenar empleados\n\n");
+                system("pause");
+                break;
+
+            case '5':
+                printf("usted salio del programa\n");
+                seguir='s';
+
+                //system("pause");
+                break;
+
+            default:
+                printf("\n Opcion invalida\n\n");
+                system("break");
+
         }
-    }while(opcion!=5);
 
-
-
-    //inicializarEmpleados(lista, T);
-
-
-
-
+    }
     return 0;
 }
 
-int menuDeOpciones(char mensaje[])
-{
-    int opcion;
-    printf("%s", mensaje);
-    scanf("%d", &opcion);
 
-    return opcion;
-}
+
+
