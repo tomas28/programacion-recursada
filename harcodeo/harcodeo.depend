@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1569248904 source:c:\users\alumno\desktop\harcodeo\empleado.c
+	<stdio.h>
+	<stdlib.h>
+	"empleado.h"
+
+1569249566 c:\users\alumno\desktop\harcodeo\empleado.h
+
+1569246399 source:c:\users\alumno\desktop\harcodeo\main.c
+	<stdio.h>
+	<stdlib.h>
+	"empleado.h"
+
